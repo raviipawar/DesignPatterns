@@ -3,6 +3,8 @@ package inculcation.org;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import inculcation.org.builder.Student;
+import inculcation.org.builder.StudentBuilder;
 import inculcation.org.singleton.DemoSingleton;
 import inculcation.org.singleton.DemoSingletonLazy;
 import inculcation.org.singleton.DemoSingletonWithoutSyncBlock;
@@ -42,8 +44,12 @@ public class DesignPatternsInJavaApplication {
 		System.out.println(demoSingletonWithoutSyncBlock.hashCode());
 		System.out.println(demoSingletonWithoutSyncBlock1.hashCode());
 		
-
-
+		Student student = new StudentBuilder().setName("ravi").setAge(29).getStudent();
+		System.out.println(student);
+		
+		Student student2 = new StudentBuilder().setName("rahul").setGender("male").setAge(25).getStudent();
+		System.out.println(student2);
+		
 	}
 
 }
