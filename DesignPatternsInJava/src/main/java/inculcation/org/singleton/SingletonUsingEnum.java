@@ -1,10 +1,13 @@
 package inculcation.org.singleton;
 
-enum SingletonUsingEnum {
+public enum SingletonUsingEnum {
 
 	INSTANCE;
 	int i;
-	public void show() {
-		System.out.println(i);
+	public int getValue() {
+		return i;
+	}
+	public void setValue(int i) {
+		this.i=i;
 	}
 }
