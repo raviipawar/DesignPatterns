@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import inculcation.org.builder.Student;
 import inculcation.org.builder.StudentBuilder;
+import inculcation.org.factory.Android;
+import inculcation.org.factory.FactoryClass;
+import inculcation.org.factory.OS;
 import inculcation.org.singleton.DemoSingleton;
 import inculcation.org.singleton.DemoSingletonLazy;
 import inculcation.org.singleton.DemoSingletonWithoutSyncBlock;
@@ -50,6 +53,17 @@ public class DesignPatternsInJavaApplication {
 		Student student2 = new StudentBuilder().setName("rahul").setGender("male").setAge(25).getStudent();
 		System.out.println(student2);
 		
+		/* printing without factory pattern by exposing data to client */
+		
+		/*
+		 * OS obj = new Android(); obj.spec();
+		 */
+
+			/* printing with factory pattern by exposing data to client */
+			
+			FactoryClass fc = new FactoryClass();
+			OS obj1 = fc.getInstance("efmlasdf");
+			obj1.spec();
 	}
 
 }
